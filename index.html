@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register for Travel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="firebaseauth.js"></script>
+</head>
+<body>
+  <div class="head">
+    <h1>Register to travel</h1>
+  </div>
+    <div class="container" id="signup" style="display:none;">
+      <h1 class="form-title">Register</h1>
+      <form method="post" action="">
+        <div id="signUpMessage" class="messageDiv" style="display:none;"></div>
+        <div class="input-group">
+           <input type="text"  id="fName" placeholder="First Name" required>
+        </div>
+        <div class="input-group">
+            <input type="text"  id="lName" placeholder="Last Name" required>
+        </div>
+        <div class="input-group">
+            <input type="email"  id="rEmail" placeholder="Email" required>
+        </div>
+        <div class="input-group">
+            <input type="password" id="rPassword"  placeholder="Password" required>
+        </div>
+       <div class="group">
+        <div class="btn1">
+          <button class="btn" id="submitSignUp" >Sign Up</button>
+         </div>
+         <div class="btn2">
+          <button class="btn" id="signInButton">Sign In</button>
+         </div>
+       </div>
+      </form>
+    </div>
+
+  <div class="container" id="signIn">
+        <h1 class="form-title">Sign In</h1>
+        <form method="post" action="">
+          <div id="signInMessage" class="messageDiv" style="display:none;"></div>
+
+          <div class="input-group">
+              <input type="email"  id="email" placeholder="Email" required>
+          </div>
+          <div class="input-group">
+            <input type="password" id="password"  placeholder="Password" required>
+          </div>
+         <div class="group">
+          <div class="btn1">
+            <button  class="btn"  id="submitSignIn">Sign In</button>
+          </div> 
+          <div class="btn2">
+            <button id="signUpButton">Sign Up</button>
+          </div>
+         </div>
+        </form>
+      </div>
+      <script>
+          const signUpButton=document.getElementById('signUpButton');
+          const signInButton=document.getElementById('signInButton');
+          const signInForm=document.getElementById('signIn');
+          const signUpForm=document.getElementById('signup');
+
+          signUpButton.addEventListener('click',function(){
+              signInForm.style.display="none";
+              signUpForm.style.display="block";
+          })
+          signInButton.addEventListener('click', function(){
+              signInForm.style.display="block";
+              signUpForm.style.display="none";
+          })
+      </script>
+</body>
+</html>
